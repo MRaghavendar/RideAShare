@@ -10,7 +10,7 @@
         android:id="@+id/get"
         android:layout_width="323dp"
         android:layout_height="102dp"
-        android:text="Get a Ride"
+        android:text="Post a Ride"
         app:layout_constraintBottom_toTopOf="@+id/request"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
