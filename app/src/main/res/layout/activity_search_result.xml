@@ -7,7 +7,7 @@
     tools:context=".Search_result">
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/addTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="61dp"
@@ -26,30 +26,31 @@
         android:text="Maryvile -> Kansas     price: $30     10/22/19 4:00 PM"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/selectBTN" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/selectBTN"
         android:layout_width="79dp"
         android:layout_height="40dp"
         android:layout_marginStart="135dp"
         android:layout_marginTop="104dp"
+        android:onClick="details"
         android:text="Select"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintStart_toEndOf="@+id/nameTV"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/ratingTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
         android:layout_marginTop="21dp"
         android:text="Rating *****"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/addTV" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/nameTV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -57,42 +58,43 @@
         android:text="Yeshwanth"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingTV" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/selectBTN1"
         android:layout_width="80dp"
         android:layout_height="36dp"
         android:layout_marginStart="113dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="24dp"
+        android:onClick="details"
         android:text="Select"
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintBottom_toTopOf="@+id/addressTV1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView19" />
+        app:layout_constraintStart_toEndOf="@+id/nameTV1" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/addressTV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="Maryvile -> Kansas     price: $25     10/22/19 6:00 PM"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTV1" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/ratingTV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="24dp"
         android:text="Rating ****"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTV1" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/headerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="182dp"

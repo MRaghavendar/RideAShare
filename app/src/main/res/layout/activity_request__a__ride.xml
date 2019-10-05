@@ -7,7 +7,7 @@
     tools:context=".Request_A_Ride">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/fromTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="67dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/startET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
@@ -28,11 +28,11 @@
         android:hint="Starting Point"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/fromTV"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/toTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -40,10 +40,10 @@
         android:text="To"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/fromTV" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/destinationET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -51,8 +51,8 @@
         android:ems="10"
         android:hint="Destination"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/editText10" />
+        app:layout_constraintStart_toEndOf="@+id/toTV"
+        app:layout_constraintTop_toBottomOf="@+id/startET" />
 
     <TextView
         android:id="@+id/textView14"
@@ -60,35 +60,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="48dp"
-        android:text="Timming"
+        android:text="Timing"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/toTV" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/timeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Enter Time of ride"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+        app:layout_constraintTop_toBottomOf="@+id/destinationET" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/searchBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginTop="53dp"
+        android:onClick="Search_fun"
         android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText12" />
+        app:layout_constraintTop_toBottomOf="@+id/timeET" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/headerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="184dp"
