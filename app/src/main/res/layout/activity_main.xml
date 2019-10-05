@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="62dp"
         android:text="Username"
         app:layout_constraintEnd_toStartOf="@+id/usernameET"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
 
     <EditText
         android:id="@+id/usernameET"
@@ -36,7 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="51dp"
         android:layout_marginTop="82dp"
+        android:layout_marginEnd="64dp"
         android:text="Password"
+        app:layout_constraintEnd_toStartOf="@+id/PasswordET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 
@@ -53,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameET" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/loginHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="53dp"
@@ -64,27 +66,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Log_inBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginBottom="283dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="57dp"
+        android:onClick="Login_Fun"
+        android:text="Log in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordET" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/SignupBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="189dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="132dp"
+        android:onClick="Signup_fun"
         android:text="SignUp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordET" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="38dp"
+        android:text="Don't have an account?"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/Log_inBTN" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
