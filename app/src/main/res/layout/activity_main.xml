@@ -84,11 +84,11 @@
         android:layout_marginTop="132dp"
         android:onClick="Signup_fun"
         android:text="SignUp"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintStart_toEndOf="@+id/hintTV"
         app:layout_constraintTop_toBottomOf="@+id/PasswordET" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/hintTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"

@@ -14,7 +14,11 @@ public class WelcomePage extends AppCompatActivity {
         setContentView(R.layout.activity_welcome_page);
     }
     public void PostRide(View v){
-        Intent b1= new Intent(this,Post_A_Ride.class);
-        startActivity(b1);
+        Intent intent1 = new Intent(this,Post_A_Ride.class);
+        startActivity(intent1);
+    }
+    public void ReqRide(View v){
+        Intent intent2= new Intent(this,Request_A_Ride.class);
+        startActivity(intent2);
     }
 }

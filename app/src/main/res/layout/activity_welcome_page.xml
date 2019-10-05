@@ -23,6 +23,7 @@
         android:id="@+id/request"
         android:layout_width="315dp"
         android:layout_height="106dp"
+        android:onClick="ReqRide"
         android:text="Request a Ride"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

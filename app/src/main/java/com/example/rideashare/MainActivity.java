@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Login_Fun(View v){
-        Intent b1= new Intent(this,WelcomePage.class);
-        startActivity(b1);
+        Intent intent1= new Intent(this,WelcomePage.class);
+        startActivity(intent1);
     }
     public void Signup_fun(View v){
-        Intent b1= new Intent(this,Sign_up.class);
-        startActivity(b1);
+        Intent intent1= new Intent(this,Sign_up.class);
+        startActivity(intent1);
     }
 }
