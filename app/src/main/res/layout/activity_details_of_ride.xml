@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Email" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/locationBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Location" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/headerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="174dp"
@@ -72,4 +72,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/closeBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="280dp"
+        android:onClick="close_fun"
+        android:text="Close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Location" />
 </androidx.constraintlayout.widget.ConstraintLayout>
