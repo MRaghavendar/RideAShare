@@ -33,7 +33,7 @@ public class Post_A_Ride extends AppCompatActivity {
         editor.putString("Timing",timeET.getText().toString());
         editor.putString("Cost",costET.getText().toString());
         editor.commit();
-
+        Toast.makeText(getApplicationContext(), "Posted successful", Toast.LENGTH_SHORT).show();
         Intent b1= new Intent(this,WelcomePage.class);
         startActivity(b1);
     }
