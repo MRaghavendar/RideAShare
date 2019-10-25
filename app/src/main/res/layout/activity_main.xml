@@ -14,19 +14,19 @@
         android:layout_marginTop="37dp"
         android:layout_marginEnd="62dp"
         android:text="Username"
-        app:layout_constraintEnd_toStartOf="@+id/usernameET"
+        app:layout_constraintEnd_toStartOf="@+id/uNameET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
 
     <EditText
-        android:id="@+id/usernameET"
+        android:id="@+id/uNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
         android:layout_marginTop="185dp"
         android:ems="10"
+        android:hint="username"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toEndOf="@+id/user"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,21 +38,21 @@
         android:layout_marginTop="82dp"
         android:layout_marginEnd="64dp"
         android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/PasswordET"
+        app:layout_constraintEnd_toStartOf="@+id/pwdET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <EditText
-        android:id="@+id/PasswordET"
+        android:id="@+id/pwdET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginTop="59dp"
         android:ems="10"
+        android:hint="password"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toEndOf="@+id/pass"
-        app:layout_constraintTop_toBottomOf="@+id/usernameET" />
+        app:layout_constraintTop_toBottomOf="@+id/uNameET" />
 
     <TextView
         android:id="@+id/loginHeader"
@@ -71,10 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginTop="57dp"
-        android:onClick="Login_Fun"
+        android:onClick="login_Fun"
         android:text="Log in"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordET" />
+        app:layout_constraintTop_toBottomOf="@+id/pwdET" />
 
     <Button
         android:id="@+id/SignupBTN"
@@ -85,7 +85,7 @@
         android:onClick="Signup_fun"
         android:text="SignUp"
         app:layout_constraintStart_toEndOf="@+id/hintTV"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordET" />
+        app:layout_constraintTop_toBottomOf="@+id/pwdET" />
 
     <TextView
         android:id="@+id/hintTV"
