@@ -12,6 +12,7 @@ public class Search_result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
+
     }
     public void details(View v){
         Intent intent1= new Intent(this,Details_of_ride.class);
