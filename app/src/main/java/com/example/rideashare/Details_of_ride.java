@@ -24,8 +24,8 @@ public class Details_of_ride extends AppCompatActivity {
 
         TextView uNameTV = findViewById(R.id.Name);
         uNameTV.setText(uName);
-//        TextView uNumberTV = findViewById(R.id.ContactNUM);
-//        uNumberTV.setText(Integer.toString(uNumber));
+        TextView uNumberTV = findViewById(R.id.ContactNUM);
+        uNumberTV.setText(Integer.toString(uNumber));
         TextView emailTV = findViewById(R.id.Email);
         emailTV.setText(email);
     }
