@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void login_Fun(View V) {
         EditText etName = findViewById(R.id.uNameET);
         EditText etPassword = findViewById(R.id.pwdET);
