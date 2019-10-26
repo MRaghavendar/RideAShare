@@ -29,14 +29,14 @@ public class Sign_up extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         String fName = firstnameET.getText().toString();
         String lName = lasttnameET.getText().toString();
-        int num = Integer.parseInt(numberET.getText().toString());
+        String num = numberET.getText().toString();
         String newPass = passwordET.getText().toString();
         String newEmail = email.getText().toString();
         editor.putString("username", newEmail);
         editor.putString("password", newPass);
         editor.putString("First Name", fName);
         editor.putString("Last Name", lName);
-        editor.putInt("Phone Number", num);
+        editor.putString("Phone Number", num);
         editor.commit();
         Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
         Intent intent1 = new Intent(this, MainActivity.class);
