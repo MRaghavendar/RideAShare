@@ -23,13 +23,13 @@ public class Details_of_ride extends AppCompatActivity {
         String email = preferences.getString("username", "");
         String address = preferences.getString("Address", "");
 
-        TextView uNameTV = findViewById(R.id.Name);
+        TextView uNameTV = findViewById(R.id.name);
         uNameTV.setText(uName);
-        TextView uNumberTV = findViewById(R.id.ContactNUM);
+        TextView uNumberTV = findViewById(R.id.contactNUM);
         uNumberTV.setText(uNumber);
-        TextView emailTV = findViewById(R.id.Email);
+        TextView emailTV = findViewById(R.id.email);
         emailTV.setText(email);
-        TextView addressTV = findViewById(R.id.Location);
+        TextView addressTV = findViewById(R.id.location);
         addressTV.setText(address);
     }
 
