@@ -21,7 +21,7 @@
         android:id="@+id/startET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="149dp"
         android:layout_marginBottom="537dp"
         android:ems="10"
@@ -29,7 +29,8 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/fromTV"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/toTV"
@@ -55,26 +56,26 @@
         app:layout_constraintTop_toBottomOf="@+id/startET" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/dateTV_req"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="48dp"
-        android:text="Timing"
+        android:text="Date"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toTV" />
 
     <EditText
-        android:id="@+id/timeET"
+        android:id="@+id/dateET_req"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Enter Time of ride"
+        android:hint="Enter Date of ride"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/dateTV_req"
         app:layout_constraintTop_toBottomOf="@+id/destinationET" />
 
     <Button
@@ -86,7 +87,7 @@
         android:onClick="Search_fun"
         android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeET" />
+        app:layout_constraintTop_toBottomOf="@+id/dateET_req" />
 
     <TextView
         android:id="@+id/headerTV"

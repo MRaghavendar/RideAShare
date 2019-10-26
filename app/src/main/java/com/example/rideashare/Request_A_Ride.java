@@ -20,7 +20,7 @@ public class Request_A_Ride extends AppCompatActivity {
     public void Search_fun(View v){
         EditText fromET = findViewById(R.id.startET);
         EditText toET = findViewById(R.id.destinationET);
-        EditText timET = findViewById(R.id.timeET);
+        EditText timET = findViewById(R.id.dateET_req);
         SharedPreferences preferences = getSharedPreferences("PREFS", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("Start", fromET.getText().toString());
