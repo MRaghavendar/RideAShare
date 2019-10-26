@@ -24,7 +24,7 @@ public class Post_A_Ride extends AppCompatActivity {
         EditText seatsET = findViewById(R.id.seatsEdit);
         EditText locET = findViewById(R.id.locationET);
         String s = seatsET.getText().toString();
-        EditText timeET = findViewById(R.id.timingsEdit);
+        EditText timeET = findViewById(R.id.dateEdit);
         EditText costET = findViewById(R.id.costEdit);
         SharedPreferences preferences = getSharedPreferences("PREFS", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();

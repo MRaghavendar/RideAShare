@@ -82,31 +82,33 @@
         app:layout_constraintTop_toBottomOf="@+id/destinationEdit" />
 
     <TextView
-        android:id="@+id/timingsText"
+        android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="61dp"
         android:layout_marginBottom="399dp"
-        android:text="Timings"
+        android:text="Date"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seatsText" />
+        app:layout_constraintTop_toBottomOf="@+id/seatsText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/timingsEdit"
+        android:id="@+id/dateEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="116dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="387dp"
         android:ems="10"
-        android:hint="timings"
+        android:hint="Date"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/timingsText"
-        app:layout_constraintTop_toBottomOf="@+id/seatsEdit" />
+        app:layout_constraintStart_toEndOf="@+id/dateText"
+        app:layout_constraintTop_toBottomOf="@+id/seatsEdit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/costText"
@@ -119,7 +121,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/costEdit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timingsText" />
+        app:layout_constraintTop_toBottomOf="@+id/dateText" />
 
     <EditText
         android:id="@+id/costEdit"
@@ -131,7 +133,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/locationET"
         app:layout_constraintStart_toEndOf="@+id/costText"
-        app:layout_constraintTop_toBottomOf="@+id/timingsEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/dateEdit" />
 
     <Button
         android:id="@+id/postBTN"
