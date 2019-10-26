@@ -21,4 +21,8 @@ public class WelcomePage extends AppCompatActivity {
         Intent intent2= new Intent(this,Request_A_Ride.class);
         startActivity(intent2);
     }
+    public void logout_fun(View v){
+        Intent logout_intent = new Intent(this,MainActivity.class);
+        startActivity(logout_intent);
+    }
 }
