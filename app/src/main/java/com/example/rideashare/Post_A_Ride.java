@@ -22,6 +22,7 @@ public class Post_A_Ride extends AppCompatActivity {
         EditText startET = findViewById(R.id.startingEdit);
         EditText DesET = findViewById(R.id.destinationEdit);
         EditText seatsET = findViewById(R.id.seatsEdit);
+        EditText locET = findViewById(R.id.locationET);
         String s = seatsET.getText().toString();
         EditText timeET = findViewById(R.id.timingsEdit);
         EditText costET = findViewById(R.id.costEdit);
@@ -32,6 +33,7 @@ public class Post_A_Ride extends AppCompatActivity {
         editor.putString("Seats",s);
         editor.putString("Timing",timeET.getText().toString());
         editor.putString("Cost",costET.getText().toString());
+        editor.putString("Address", locET.getText().toString());
         editor.commit();
         Toast.makeText(getApplicationContext(), "Posted successful", Toast.LENGTH_SHORT).show();
         Intent b1= new Intent(this,WelcomePage.class);

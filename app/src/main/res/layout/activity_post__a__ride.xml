@@ -129,7 +129,7 @@
         android:ems="10"
         android:hint="Name your price"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/LocationET"
+        app:layout_constraintBottom_toTopOf="@+id/locationET"
         app:layout_constraintStart_toEndOf="@+id/costText"
         app:layout_constraintTop_toBottomOf="@+id/timingsEdit" />
 
@@ -172,7 +172,7 @@
         app:layout_constraintTop_toBottomOf="@+id/costText" />
 
     <EditText
-        android:id="@+id/LocationET"
+        android:id="@+id/locationET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
