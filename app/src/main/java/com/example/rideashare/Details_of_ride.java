@@ -19,13 +19,13 @@ public class Details_of_ride extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("PREFS", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         String uName = preferences.getString("First Name", "");
-        int uNumber = preferences.getInt("Phone Number", 0);
+        String uNumber = preferences.getString("Phone Number", "");
         String email = preferences.getString("username", "");
 
         TextView uNameTV = findViewById(R.id.Name);
         uNameTV.setText(uName);
         TextView uNumberTV = findViewById(R.id.ContactNUM);
-        uNumberTV.setText(Integer.toString(uNumber));
+        uNumberTV.setText(uNumber);
         TextView emailTV = findViewById(R.id.Email);
         emailTV.setText(email);
     }
