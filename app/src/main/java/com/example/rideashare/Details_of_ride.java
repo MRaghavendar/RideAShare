@@ -21,6 +21,7 @@ public class Details_of_ride extends AppCompatActivity {
         String uName = preferences.getString("First Name", "");
         String uNumber = preferences.getString("Phone Number", "");
         String email = preferences.getString("username", "");
+        String address = preferences.getString("Address", "");
 
         TextView uNameTV = findViewById(R.id.Name);
         uNameTV.setText(uName);
@@ -28,6 +29,8 @@ public class Details_of_ride extends AppCompatActivity {
         uNumberTV.setText(uNumber);
         TextView emailTV = findViewById(R.id.Email);
         emailTV.setText(email);
+        TextView addressTV = findViewById(R.id.Location);
+        addressTV.setText(address);
     }
 
     public void close_fun(View v){
