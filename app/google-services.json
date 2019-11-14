@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "338676321681",
+    "firebase_url": "https://project-3e909.firebaseio.com",
+    "project_id": "project-3e909",
+    "storage_bucket": "project-3e909.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338676321681:android:660f0ad571fbad1101de30",
+        "android_client_info": {
+          "package_name": "com.example.rideashare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338676321681-f35pv4knen7lvlrhusapp953kt7b4nm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN9xhIvIgjQLLbh3lyU-R2M5RHtw1grjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338676321681-f35pv4knen7lvlrhusapp953kt7b4nm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
