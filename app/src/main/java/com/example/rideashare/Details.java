@@ -5,14 +5,13 @@ public class Details {
     private String last_name;
     private String phone_number;
     private String Email;
-    private String id ;
     private String password;
 
-    public Details(){
+    public Details(String start, String end, String date_time, String price, String seats, String place){
 
     }
 
-    public Details(String id,String first_name, String last_name, String phone_number, String email, String password) {
+    public Details(String first_name, String last_name, String phone_number, String email, String password) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
