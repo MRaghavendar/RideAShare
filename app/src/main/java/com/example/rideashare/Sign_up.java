@@ -16,16 +16,21 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Sign_up extends AppCompatActivity {
     EditText emailId, password, firstname, lastname, phonenum;
     Button btnSignUp;
     FirebaseAuth mFirebaseAuth;
+    DatabaseReference reff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailId = findViewById(R.id.emailET);
         password = findViewById(R.id.passwordET);
@@ -37,51 +42,59 @@ public class Sign_up extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
                 String fname = firstname.getText().toString();
                 String lname = firstname.getText().toString();
                 String number = firstname.getText().toString();
-                if(email.isEmpty()){
+                if (email.isEmpty()) {
                     emailId.setError("Please enter email id");
                     emailId.requestFocus();
-                }
-                else  if(pwd.isEmpty()){
+                } else if (pwd.isEmpty()) {
                     password.setError("Please enter your password");
                     password.requestFocus();
-                }
-                else if(fname.isEmpty()){
+                } else if (fname.isEmpty()) {
                     firstname.setError("Please enter first name");
                     firstname.requestFocus();
-                }
-                else if(lname.isEmpty()){
+                } else if (lname.isEmpty()) {
                     firstname.setError("Please enter first name");
                     firstname.requestFocus();
-                }
-                else if(number.isEmpty()){
+                } else if (number.isEmpty()) {
                     firstname.setError("Please enter first name");
                     firstname.requestFocus();
-                }
-
-                else  if(email.isEmpty() && pwd.isEmpty()){
-                    Toast.makeText(Sign_up.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
-                }
-                else  if(!(email.isEmpty() && pwd.isEmpty())){
+                } else if (email.isEmpty() && pwd.isEmpty()) {
+                    Toast.makeText(Sign_up.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
+                } else if (!(email.isEmpty() && pwd.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(Sign_up.this, new OnCompleteListener<com.google.firebase.auth.AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<com.google.firebase.auth.AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                Toast.makeText(Sign_up.this,"SignUp Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                startActivity(new Intent(Sign_up.this,MainActivity.class));
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(Sign_up.this, "SignUp Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
+                            } else {
+                                String user_id = mFirebaseAuth.getCurrentUser().getUid();
+                                String email = emailId.getText().toString();
+                                String pwd = password.getText().toString();
+                                String fname = firstname.getText().toString();
+                                String lname = lastname.getText().toString();
+                                String number = phonenum.getText().toString();
+                                reff = FirebaseDatabase.getInstance().getReference().child("details").child(user_id);
+
+//                               if(!(email.isEmpty() && pwd.isEmpty())){
+//                                    String id = reff.push().getKey();
+                                Details userdetails = new Details(fname, lname, number, email, pwd);
+                                firstname.setText("");
+                                lastname.setText("");
+                                phonenum.setText("");
+                                emailId.setText("");
+                                password.setText("");
+                                reff.setValue(userdetails);
+
+
+                                startActivity(new Intent(Sign_up.this, MainActivity.class));
                             }
                         }
                     });
-                    }
-                else{
-                    Toast.makeText(Sign_up.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
@@ -110,4 +123,10 @@ public class Sign_up extends AppCompatActivity {
 //        Intent intent1 = new Intent(this, MainActivity.class);
 //        startActivity(intent1);
 //    }
+
+//    public void user_details(){
+//
+//
+//        }
 }
+
