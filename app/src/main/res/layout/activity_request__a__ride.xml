@@ -70,11 +70,13 @@
         android:id="@+id/dateET_req"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Enter Date of ride"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/searchBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/dateTV_req"
         app:layout_constraintTop_toBottomOf="@+id/destinationET" />
 

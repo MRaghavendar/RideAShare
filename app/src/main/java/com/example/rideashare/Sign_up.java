@@ -79,35 +79,7 @@ public class Sign_up extends AppCompatActivity {
                         }
                     });
                     }
-                else{
-                    Toast.makeText(Sign_up.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
-
-                }
             }
         });
     }
-
-//    public void signup(View v) {
-//        EditText firstnameET = findViewById(R.id.firstNameET);
-//        EditText lasttnameET = findViewById(R.id.lastNameET);
-//        EditText numberET = findViewById(R.id.contactET);
-//        EditText passwordET = findViewById(R.id.passwordET);
-//        EditText email = findViewById(R.id.emailET);
-//        SharedPreferences preferences = getSharedPreferences("PREFS", Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = preferences.edit();
-//        String fName = firstnameET.getText().toString();
-//        String lName = lasttnameET.getText().toString();
-//        String num = numberET.getText().toString();
-//        String newPass = passwordET.getText().toString();
-//        String newEmail = email.getText().toString();
-//        editor.putString("username", newEmail);
-//        editor.putString("password", newPass);
-//        editor.putString("First Name", fName);
-//        editor.putString("Last Name", lName);
-//        editor.putString("Phone Number", num);
-//        editor.commit();
-//        Toast.makeText(getApplicationContext(), "successful", Toast.LENGTH_SHORT).show();
-//        Intent intent1 = new Intent(this, MainActivity.class);
-//        startActivity(intent1);
-//    }
 }
