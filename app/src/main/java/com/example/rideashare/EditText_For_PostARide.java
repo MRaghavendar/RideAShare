@@ -1,67 +1,70 @@
 package com.example.rideashare;
 
 class EditText_For_PostARide {
-    private String Starting_Point;
-    private String Ending_Point;
-    private String Date;
-    private String Cost;
-    private String Seats_available;
-    private String Location;
+    private String start;
+    private String end;
+    private String Date_time;
+    private String price;
+    private String seats;
+    private String place;
 
-    public EditText_For_PostARide(String starting_Point, String ending_Point, String date, String cost, String seats_available, String location) {
-        Starting_Point = starting_Point;
-        Ending_Point = ending_Point;
-        Date = date;
-        Cost = cost;
-        Seats_available = seats_available;
-        Location = location;
+
+    public EditText_For_PostARide(String start, String end, String date_time, String price, String seats, String place) {
+        this.start = start;
+        this.end = end;
+        Date_time = date_time;
+        this.price = price;
+        this.seats = seats;
+        this.place = place;
+
     }
 
-    public String getStarting_Point() {
-        return Starting_Point;
+    public String getStart() {
+        return start;
     }
 
-    public void setStarting_Point(String starting_Point) {
-        Starting_Point = starting_Point;
+    public void setStart(String start) {
+        this.start = start;
     }
 
-    public String getEnding_Point() {
-        return Ending_Point;
+    public String getEnd() {
+        return end;
     }
 
-    public void setEnding_Point(String ending_Point) {
-        Ending_Point = ending_Point;
+    public void setEnd(String end) {
+        this.end = end;
     }
 
-    public String getDate() {
-        return Date;
+    public String getDate_time() {
+        return Date_time;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDate_time(String date_time) {
+        Date_time = date_time;
     }
 
-    public String getCost() {
-        return Cost;
+    public String getPrice() {
+        return price;
     }
 
-    public void setCost(String cost) {
-        Cost = cost;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getSeats_available() {
-        return Seats_available;
+    public String getSeats() {
+        return seats;
     }
 
-    public void setSeats_available(String seats_available) {
-        Seats_available = seats_available;
+    public void setSeats(String seats) {
+        this.seats = seats;
     }
 
-    public String getLocation() {
-        return Location;
+    public String getPlace() {
+        return place;
     }
 
-    public void setLocation(String location) {
-        Location = location;
+    public void setPlace(String place) {
+        this.place = place;
     }
+
 }
