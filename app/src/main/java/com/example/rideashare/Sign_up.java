@@ -50,18 +50,18 @@ public class Sign_up extends AppCompatActivity {
                     password.setError("Please enter your password");
                     password.requestFocus();
                 }
-//                else if(fname.isEmpty()){
-//                    firstname.setError("Please enter first name");
-//                    firstname.requestFocus();
-//                }
-//                else if(lname.isEmpty()){
-//                    firstname.setError("Please enter first name");
-//                    firstname.requestFocus();
-//                }
-//                else if(number.isEmpty()){
-//                    firstname.setError("Please enter first name");
-//                    firstname.requestFocus();
-//                }
+                else if(fname.isEmpty()){
+                    firstname.setError("Please enter first name");
+                    firstname.requestFocus();
+                }
+                else if(lname.isEmpty()){
+                    firstname.setError("Please enter first name");
+                    firstname.requestFocus();
+                }
+                else if(number.isEmpty()){
+                    firstname.setError("Please enter first name");
+                    firstname.requestFocus();
+                }
 
                 else  if(email.isEmpty() && pwd.isEmpty()){
                     Toast.makeText(Sign_up.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
