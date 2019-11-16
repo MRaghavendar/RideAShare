@@ -20,4 +20,4 @@ The main purpose of this project is to share a ride using android application. U
 - Username: yeshwanth123@gmail.com
 - password: asdfgh
 ## Resources:
-[Firebase](https://www.youtube.com/watch?v=V0ZrnL-i77Q)
+[Firebase connection](https://www.youtube.com/watch?v=V0ZrnL-i77Q)
