@@ -11,3 +11,13 @@ Ride Share Android Application
 1.	Nishanth Reddy Devi Reddy, S534640
 ## Project Description:
 The main purpose of this project is to share a ride using android application. Users can post a ride or request a ride through this application. Users can get a great deal of rides in affordable prices. Every user with a particular login id have personal information stored such as name, contact information, email address and even total number of rides that he/she involved. Users can also know about reviews and ratings of the other users with whom they share ride.
+## Requirements:
+Mobile phone with Android Operating System.
+Minimum 1 GB RAM.
+Minimum 1 GB internal Storage.
+To run application user device should have internet connected.
+## Test Credentials:
+Username: yeshwanth123@gmail.com
+password: asdfgh
+## Resources:
+[(https://www.youtube.com/watch?v=V0ZrnL-i77Q)]
