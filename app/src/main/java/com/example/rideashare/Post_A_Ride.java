@@ -24,12 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Post_A_Ride extends AppCompatActivity {
     EditText Starting_Point, Ending_Point, Date, Cost, Seats_available, Location;
     Button Post_BTN;
-    DatabaseReference myRef;
-    FirebaseAuth mFirebaseAuth;
+    DatabaseReference DataRef;
+    FirebaseAuth authentionOfFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post__a__ride);
 
@@ -50,7 +49,6 @@ public class Post_A_Ride extends AppCompatActivity {
                 String Price = Cost.getText().toString();
                 String Seats = Seats_available.getText().toString();
                 String Place = Location.getText().toString();
-
                 if (Start.isEmpty()) {
                     Starting_Point.setError("Please enter starting point");
                     Starting_Point.requestFocus();
@@ -72,17 +70,15 @@ public class Post_A_Ride extends AppCompatActivity {
                 } else if (Start.isEmpty() && End.isEmpty() && date.isEmpty() && Price.isEmpty() && Seats.isEmpty() && Place.isEmpty()) {
                     Toast.makeText(Post_A_Ride.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
                 } else if (!(Start.isEmpty() && End.isEmpty() && date.isEmpty() && Price.isEmpty() && Seats.isEmpty() && Place.isEmpty())) {
-
-
-
-                    String user_id = mFirebaseAuth.getCurrentUser().getUid();
+                    String user_id = authentionOfFirebase.getCurrentUser().getUid();
                     String start = Starting_Point.getText().toString();
                     String end = Ending_Point.getText().toString();
                     String Date_time = Date.getText().toString();
                     String price = Cost.getText().toString();
                     String seats = Seats_available.getText().toString();
                     String place = Location.getText().toString();
-                    myRef = FirebaseDatabase.getInstance().getReference().child("message");
+
+                    DataRef = FirebaseDatabase.getInstance().getReference().child("message");
 
                     EditText_For_PostARide Ride_Details = new EditText_For_PostARide(start, end, Date_time, price, seats, place);
                     Starting_Point.setText("");
@@ -91,7 +87,7 @@ public class Post_A_Ride extends AppCompatActivity {
                     Cost.setText("");
                     Seats_available.setText("");
                     Location.setText("");
-                    myRef.child("message").setValue(Ride_Details);
+                    DataRef.child("message").setValue(Ride_Details);
 
                     startActivity(new Intent(Post_A_Ride.this, WelcomePage.class));
                 }
