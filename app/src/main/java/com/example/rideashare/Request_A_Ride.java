@@ -74,7 +74,7 @@ public class Request_A_Ride extends AppCompatActivity {
 
 
 
-
+//
 //        mFirebaseAuth = FirebaseAuth.getInstance();
 //        StartPoint = findViewById(R.id.startingEdit);
 //        EndPoint = findViewById(R.id.destinationEdit);
