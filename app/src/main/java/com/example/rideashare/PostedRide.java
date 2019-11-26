@@ -1,18 +1,19 @@
 package com.example.rideashare;
 
-class EditText_For_PostARide {
+class PostedRide {
     private String start;
     private String end;
-    private String Date_time;
+//    private String Date_time;
     private String price;
     private String seats;
     private String place;
 
 
-    public EditText_For_PostARide(String start, String end, String date_time, String price, String seats, String place) {
+    public PostedRide(String start, String end, String price, String seats, String place) {
+
         this.start = start;
         this.end = end;
-        Date_time = date_time;
+//        this.Date_time = Date_time;
         this.price = price;
         this.seats = seats;
         this.place = place;
@@ -35,13 +36,13 @@ class EditText_For_PostARide {
         this.end = end;
     }
 
-    public String getDate_time() {
-        return Date_time;
-    }
-
-    public void setDate_time(String date_time) {
-        Date_time = date_time;
-    }
+//    public String getDate_time() {
+//        return Date_time;
+//    }
+//
+//    public void setDate_time(String date_time) {
+//        Date_time = date_time;
+//    }
 
     public String getPrice() {
         return price;

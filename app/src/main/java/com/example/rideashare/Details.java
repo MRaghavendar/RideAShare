@@ -7,15 +7,17 @@ public class Details {
     private String Email;
     private String password;
 
-    public Details(String start, String end, String date_time, String price, String seats, String place){
 
-    }
 
     public Details(String first_name, String last_name, String phone_number, String email, String password) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone_number = phone_number;
         Email = email;
+    }
+
+    public Details() {
+
     }
 
     public String getFirst_name() {

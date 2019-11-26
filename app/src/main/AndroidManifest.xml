@@ -15,6 +15,7 @@
         <activity android:name=".Post_A_Ride" />
         <activity android:name=".Sign_up" />
         <activity android:name=".WelcomePage" />
+        <activity android:name=".DisplayData" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
