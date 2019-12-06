@@ -45,8 +45,6 @@ public class Request_A_Ride extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request__a__ride);
-
-
         startPoint = (EditText) findViewById(R.id.startET);
 
         endPoint = (EditText) findViewById(R.id.destinationET);

@@ -93,7 +93,7 @@ public class DisplayData extends AppCompatActivity {
             username += "\nCost: " + postMap.get("price");
             username += "\nNo of seats: " + postMap.get("seats")+"\n\n";
 
-            userName.setText(username );
+            userName.setText(username);
 
         }
 

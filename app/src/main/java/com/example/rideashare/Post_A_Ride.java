@@ -26,9 +26,9 @@ public class Post_A_Ride extends AppCompatActivity {
         setContentView(R.layout.activity_post__a__ride);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
-        Starting_Point = (EditText) findViewById(R.id.startingEdit);
-        Ending_Point = (EditText) findViewById(R.id.destinationEdit);
-//        date_timeET = (EditText) findViewById(R.id.dateET_req);
+        Starting_Point =  findViewById(R.id.startingEdit);
+        Ending_Point = findViewById(R.id.destinationEdit);
+        date_timeET = (EditText) findViewById(R.id.dateEdit);
         Cost = (EditText) findViewById(R.id.costEdit);
         Seats_available = (EditText) findViewById(R.id.seatsEdit);
         Location = (EditText) findViewById(R.id.locationET);
@@ -39,7 +39,7 @@ public class Post_A_Ride extends AppCompatActivity {
 
                 String Start = Starting_Point.getText().toString();
                 String End = Ending_Point.getText().toString();
-//                String date_str = date_timeET.getText().toString();
+                String date_str = date_timeET.getText().toString();
                 String Price = Cost.getText().toString();
                 String Seats = Seats_available.getText().toString();
                 String Place = Location.getText().toString();
@@ -51,10 +51,10 @@ public class Post_A_Ride extends AppCompatActivity {
                     Ending_Point.setError("Please enter ending point");
                     Ending_Point.requestFocus();
                 }
-//                else if (date_str.isEmpty()) {
-//                    date_timeET.setError("Please enter date of the ride");
-//                    date_timeET.requestFocus();
-//                }
+                else if (date_str.isEmpty()) {
+                    date_timeET.setError("Please enter date of the ride");
+                    date_timeET.requestFocus();
+                }
                     else if (Price.isEmpty()) {
                     Cost.setError("Please enter price of the ride");
                     Cost.requestFocus();
@@ -71,7 +71,7 @@ public class Post_A_Ride extends AppCompatActivity {
 
                     String start = Starting_Point.getText().toString();
                     String end = Ending_Point.getText().toString();
-//                    String date_str1 = date_timeET.getText().toString();
+                    String date_str1 = date_timeET.getText().toString();
                     String price = Cost.getText().toString();
                     String seats = Seats_available.getText().toString();
                     String place = Location.getText().toString();
@@ -79,10 +79,10 @@ public class Post_A_Ride extends AppCompatActivity {
                     reff = FirebaseDatabase.getInstance().getReference().child("details").child(user_id).child("post");
 
 
-                    PostedRide Ride_Details = new PostedRide(start, end,  price, seats, place);
+                    PostedRide Ride_Details = new PostedRide(start, end, date_str1, price, seats, place);
                     Starting_Point.setText("");
                     Ending_Point.setText("");
-//                    date_timeET.setText("");
+                    date_timeET.setText("");
                     Cost.setText("");
                     Seats_available.setText("");
                     Location.setText("");
