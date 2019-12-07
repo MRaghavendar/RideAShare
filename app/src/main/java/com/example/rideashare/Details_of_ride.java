@@ -33,8 +33,8 @@ public class Details_of_ride extends AppCompatActivity {
         addressTV.setText(address);
     }
 
-    public void close_fun(View v){
-        Intent intent1= new Intent(this,Search_result.class);
-        startActivity(intent1);
-    }
+//    public void close_fun(View v){
+//        Intent intent1= new Intent(this,Search_result.class);
+//        startActivity(intent1);
+//    }
 }

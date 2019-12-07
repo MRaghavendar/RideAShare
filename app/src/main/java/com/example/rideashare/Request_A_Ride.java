@@ -63,7 +63,7 @@ public class Request_A_Ride extends AppCompatActivity {
         search_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Request_A_Ride.this, Search_result.class));
+//                startActivity(new Intent(Request_A_Ride.this, Search_result.class));
 //                final String start_text = startPoint.getText().toString();
 //                final String end_text = endPoint.getText().toString();
 //                if (!(start_text.isEmpty() && end_text.isEmpty())) {

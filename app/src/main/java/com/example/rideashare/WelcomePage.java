@@ -3,6 +3,7 @@ package com.example.rideashare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,11 +23,12 @@ public class WelcomePage extends AppCompatActivity {
         startActivity(intent2);
     }
     public void available(View v){
-        Intent logout_intent = new Intent(this, DisplayData.class);
+        Intent logout_intent = new Intent(this, RideActivity.class);
         startActivity(logout_intent);
     }
     public void logout_fun(View v){
         Intent logout_intent = new Intent(this,MainActivity.class);
         startActivity(logout_intent);
     }
+
 }
