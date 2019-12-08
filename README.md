@@ -17,7 +17,7 @@ The main purpose of this project is to share a ride using android application. U
 - Minimum 1 GB internal Storage.
 - To run application user device should have internet connected.
 ## Test Credentials:
-- Username: yeshwanth123@gmail.com
+- Username: yesh123@gmail.com
 - password: asdfgh
 ## Resources:
 [Firebase connection](https://www.youtube.com/watch?v=V0ZrnL-i77Q)
