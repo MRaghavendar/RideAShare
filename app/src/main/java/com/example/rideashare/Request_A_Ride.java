@@ -1,127 +1,203 @@
 package com.example.rideashare;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class Request_A_Ride extends AppCompatActivity {
-    EditText startPoint, endPoint;
-    Button search_BTN;
-    DatabaseReference reff;
-    FirebaseUser firebaseUser;
-    ArrayList<String> fullNameList;
-    ArrayList<String> userNameList;
-    ArrayList<String> firstnameList;
-//    SearchAdapter searchAdapter;
-    RecyclerView recyclerView;
+
+
+    EditText pName, passStart, passEnd, passDate, rphone;
+    Button Request;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request__a__ride);
-        startPoint = (EditText) findViewById(R.id.startET);
+        pName =findViewById(R.id.nameET_req);
+        passStart = findViewById(R.id.startET);
+        passEnd = findViewById(R.id.destinationET);
+        passDate = findViewById(R.id.dateET_req);
+        rphone = findViewById(R.id.phoneET_req);
+//        passSeats = findViewById(R.id.seatsEdit);
+//        passAddress = findViewById(R.id.locationET);
+        Request = findViewById(R.id.searchBTN);
+//        passDetails = findViewById(R.id.detailsBtn);
+        db = FirebaseFirestore.getInstance();
 
-        endPoint = (EditText) findViewById(R.id.destinationET);
-        search_BTN = findViewById(R.id.searchBTN);
-        reff = FirebaseDatabase.getInstance().getReference().child("details").child("post");
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        fullNameList = new ArrayList<>();
-        userNameList = new ArrayList<>();
-        firstnameList = new ArrayList<>();
-
-        search_BTN.setOnClickListener(new View.OnClickListener() {
+//        passDetails.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent in = new Intent(getApplicationContext(), RideActivity.class);
+//                startActivity(in);
+//
+//            }
+//        });
+        Request.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(Request_A_Ride.this, Search_result.class));
-//                final String start_text = startPoint.getText().toString();
-//                final String end_text = endPoint.getText().toString();
-//                if (!(start_text.isEmpty() && end_text.isEmpty())) {
-////                    startActivity(new Intent(Request_A_Ride.this, Search_result.class));
-//                    reff.child("details").addListenerForSingleValueEvent(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                            fullNameList = new ArrayList<>();
-//                            userNameList = new ArrayList<>();
-//                            firstnameList = new ArrayList<>();
-//                            fullNameList.clear();
-//                            userNameList.clear();
-//                            recyclerView.removeAllViews();
-//                            /*
-//                             * Search all users for matching searched string
-//                             * */
-//                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                                String uid = snapshot.getKey();
-//                                String start_point = snapshot.child("start").getValue().toString();
-//                                String end_point = snapshot.child("end").getValue().toString();
-//                                String name = snapshot.child("first_name").getValue().toString();
-//
-//                                if (start_point.toLowerCase().equals(start_text.toLowerCase()) && end_point.toLowerCase().equals(end_text.toLowerCase())) {
-//                                    fullNameList.add(start_point);
-//                                    userNameList.add(end_point);
-//                                    firstnameList.add(name);
-//
-//                                }
-//
-//
-//                            }
-//                            recyclerView.setAdapter(new SearchAdapter(Request_A_Ride.this, fullNameList, userNameList, firstnameList));
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                        }
-//
-//
-//                    });
-//                }
-//                else {
-//                    fullNameList.add("abc");
-//                    userNameList.add("def");
-//                    firstnameList.add("ghij");
-//                    searchAdapter = new SearchAdapter(Request_A_Ride.this, fullNameList, userNameList, firstnameList);
-//                    Log.d("search ",": "+searchAdapter);
-//                    recyclerView.setAdapter(searchAdapter);
-//
-//                }
+            public void onClick(View view) {
+                String name = pName.getText().toString().trim();
+                String startLoc = passStart.getText().toString().trim();
+                String endLoc = passEnd.getText().toString().trim();
+                String dates = passDate.getText().toString().trim();
+                String number = rphone.getText().toString().trim();
+//                String seats = passSeats.getText().toString().trim();
+//                String address = passAddress.getText().toString().trim();
+
+                storeData(name, startLoc, endLoc, dates, number);
+
             }
-                                      });
+        });
+
 
 
     }
+
+
+    private void storeData(String name, String startLoc, String endLoc, String dates, String number) {
+        String id = UUID.randomUUID().toString();
+        Map<String, Object> doc = new HashMap<>();
+        doc.put("id",id);
+        doc.put("Name",name);
+        doc.put("Start", startLoc);
+        doc.put("Destination", endLoc);
+        doc.put("Date", dates);
+        doc.put("Number", number);
+//        doc.put("seats", seats);
+//        doc.put("address", address);
+
+        db.collection("Requested").document(id).set(doc)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        Toast.makeText(Request_A_Ride.this,"Added..",Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                        Toast.makeText(Request_A_Ride.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+    }
+
 }
+
+
+
+
+
+
+//    EditText startPoint, endPoint;
+//    Button search_BTN;
+//    DatabaseReference reff;
+//    FirebaseUser firebaseUser;
+//    ArrayList<String> fullNameList;
+//    ArrayList<String> userNameList;
+//    ArrayList<String> firstnameList;
+////    SearchAdapter searchAdapter;
+//    RecyclerView recyclerView;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_request__a__ride);
+//        startPoint = (EditText) findViewById(R.id.startET);
+//
+//        endPoint = (EditText) findViewById(R.id.destinationET);
+//        search_BTN = findViewById(R.id.searchBTN);
+//        reff = FirebaseDatabase.getInstance().getReference().child("details").child("post");
+//        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//
+////        recyclerView.setHasFixedSize(true);
+////        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+////        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+//
+//        fullNameList = new ArrayList<>();
+//        userNameList = new ArrayList<>();
+//        firstnameList = new ArrayList<>();
+//
+//        search_BTN.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                startActivity(new Intent(Request_A_Ride.this, Search_result.class));
+////                final String start_text = startPoint.getText().toString();
+////                final String end_text = endPoint.getText().toString();
+////                if (!(start_text.isEmpty() && end_text.isEmpty())) {
+//////                    startActivity(new Intent(Request_A_Ride.this, Search_result.class));
+////                    reff.child("details").addListenerForSingleValueEvent(new ValueEventListener() {
+////                        @Override
+////                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+////                            fullNameList = new ArrayList<>();
+////                            userNameList = new ArrayList<>();
+////                            firstnameList = new ArrayList<>();
+////                            fullNameList.clear();
+////                            userNameList.clear();
+////                            recyclerView.removeAllViews();
+////                            /*
+////                             * Search all users for matching searched string
+////                             * */
+////                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+////                                String uid = snapshot.getKey();
+////                                String start_point = snapshot.child("start").getValue().toString();
+////                                String end_point = snapshot.child("end").getValue().toString();
+////                                String name = snapshot.child("first_name").getValue().toString();
+////
+////                                if (start_point.toLowerCase().equals(start_text.toLowerCase()) && end_point.toLowerCase().equals(end_text.toLowerCase())) {
+////                                    fullNameList.add(start_point);
+////                                    userNameList.add(end_point);
+////                                    firstnameList.add(name);
+////
+////                                }
+////
+////
+////                            }
+////                            recyclerView.setAdapter(new SearchAdapter(Request_A_Ride.this, fullNameList, userNameList, firstnameList));
+////
+////                        }
+////
+////                        @Override
+////                        public void onCancelled(@NonNull DatabaseError databaseError) {
+////
+////                        }
+////
+////
+////                    });
+////                }
+////                else {
+////                    fullNameList.add("abc");
+////                    userNameList.add("def");
+////                    firstnameList.add("ghij");
+////                    searchAdapter = new SearchAdapter(Request_A_Ride.this, fullNameList, userNameList, firstnameList);
+////                    Log.d("search ",": "+searchAdapter);
+////                    recyclerView.setAdapter(searchAdapter);
+////
+////                }
+//            }
+//                                      });
+//
+//
+//    }
+
 
 
 
