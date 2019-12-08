@@ -30,5 +30,9 @@ public class WelcomePage extends AppCompatActivity {
         Intent logout_intent = new Intent(this,MainActivity.class);
         startActivity(logout_intent);
     }
+    public void Requested(View v){
+        Intent logout_intent = new Intent(this, Requested.class);
+        startActivity(logout_intent);
+    }
 
 }
