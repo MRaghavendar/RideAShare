@@ -22,5 +22,5 @@ The main purpose of this project is to share a ride using android application. U
 ## Source
 We all have read used a lot of websites and watched videos in youtube for connecting firebase. StackOverFlow website is major contributor for this application.
 ## Resources:
-[Firebase connection](https://www.youtube.com/watch?v=V0ZrnL-i77Q)
-[Recycler View](https://www.youtube.com/watch?v=1YMK2SatG8o)
+- [Firebase connection](https://www.youtube.com/watch?v=V0ZrnL-i77Q)
+- [Recycler View](https://www.youtube.com/watch?v=1YMK2SatG8o)
