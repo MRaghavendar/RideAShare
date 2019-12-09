@@ -103,7 +103,7 @@ public class Profile extends AppCompatActivity {
                                     }
                                 });
                         Toast.makeText(Profile.this, "Updated succesfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Profile.this, MainActivity.class));
+                        startActivity(new Intent(Profile.this, WelcomePage.class));
                     }
 
                     @Override
