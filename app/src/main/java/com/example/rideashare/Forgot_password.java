@@ -35,7 +35,7 @@ public class Forgot_password extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Forgot_password.this, "Password send to your email", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(Forgot_password.this, WelcomePage.class));
+                            startActivity(new Intent(Forgot_password.this, MainActivity.class));
                         }else{
                             Toast.makeText(Forgot_password.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
