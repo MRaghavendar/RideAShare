@@ -35,7 +35,6 @@ public class WelcomePage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("first_name").getValue().toString();
-
                 tv.setText(name);
             }
 
