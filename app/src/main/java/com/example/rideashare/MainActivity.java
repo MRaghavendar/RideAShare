@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.signupBTN);
         SignInBtn = findViewById(R.id.log_inBTN);
 
+
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
 //    public void login_Fun(View V) {
@@ -114,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void Signup_fun(View v) {
         Intent intent1 = new Intent(this, Sign_up.class);
+        startActivity(intent1);
+    }
+    public void Forgot_function(View v) {
+        Intent intent1 = new Intent(this, Forgot_password.class);
         startActivity(intent1);
     }
 

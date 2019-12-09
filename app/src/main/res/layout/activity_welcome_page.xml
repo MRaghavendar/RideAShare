@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/get"
-        android:layout_width="323dp"
-        android:layout_height="102dp"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
         android:onClick="PostRide"
         android:text="Post a Ride"
         app:layout_constraintBottom_toTopOf="@+id/request"
@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/request"
-        android:layout_width="315dp"
-        android:layout_height="106dp"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
         android:onClick="ReqRide"
         android:text="Request a Ride"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,8 +58,8 @@
 
     <Button
         android:id="@+id/availBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
         android:onClick="available"
         android:text="Available Rides"
         app:layout_constraintBottom_toTopOf="@+id/request"
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
         android:onClick="Requested"
         android:text="Requested Rides"
         app:layout_constraintBottom_toTopOf="@+id/request"
@@ -79,4 +79,29 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/availBTN" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:onClick="Myrides_function"
+        android:text="My Rides"
+        app:layout_constraintBottom_toTopOf="@+id/availBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get" />
+
+    <TextView
+        android:id="@+id/welcome_nameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="185dp"
+        android:textColor="#0F0103"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.example.rideashare;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,17 +13,21 @@ public class RequestViewHolder extends RecyclerView.ViewHolder{
 
         TextView id , name, start, end , date, number ;
         View mView;
+
         public RequestViewHolder(@NonNull View itemView) {
             super(itemView);
 
             mView = itemView;
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mClickListener.onItemClick(v, getAdapterPosition());
-                }
-            });
+
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+////                     mClickListener.onItemClick(v, getAdapterPosition());
+////                     onNoteListener.onNoteCLick(getAdapterPosition());
+//
+//                }
+//            });
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -48,6 +54,9 @@ public class RequestViewHolder extends RecyclerView.ViewHolder{
         public void setOnClickListener(com.example.rideashare.RequestViewHolder.ClickListener clickListener){
             mClickListener = clickListener;
         }
+//    public interface OnNoteListener{
+//        void onNoteCLick(int position);
+//    }
     }
 
 

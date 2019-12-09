@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Requested extends AppCompatActivity {
+public class Requested extends AppCompatActivity  {
 
     List<RequestModel> lm = new ArrayList<>();
     RecyclerView rv;
@@ -27,6 +28,7 @@ public class Requested extends AppCompatActivity {
     FirebaseFirestore fs;
     RequestAdapter ra;
     Button viewBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,8 @@ public class Requested extends AppCompatActivity {
 
                 }
 
-                ra = new RequestAdapter(Requested.this, lm);
+                ra = new RequestAdapter(Requested.this, lm );
+
                 rv.setAdapter(ra);
 
             }
@@ -71,4 +74,11 @@ public class Requested extends AppCompatActivity {
             }
         });
     }
+
+//    @Override
+//    public void onNoteCLick(int position) {
+//        lm.get(position);
+//        Intent intent = new Intent(this, Details_of_ride.class);
+//        startActivity(intent);
+//    }
 }

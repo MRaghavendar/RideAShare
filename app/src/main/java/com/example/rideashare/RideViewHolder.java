@@ -15,20 +15,20 @@ public class RideViewHolder extends RecyclerView.ViewHolder {
 
         mView = itemView;
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mClickListener.onItemClick(v, getAdapterPosition());
-            }
-        });
+//        itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mClickListener.onItemClick(v, getAdapterPosition());
+//            }
+//        });
 
-        itemView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                mClickListener.onItemClick(v, getAdapterPosition());
-                return true;
-            }
-        });
+//        itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                mClickListener.onItemClick(v, getAdapterPosition());
+//                return true;
+//            }
+//        });
 
         passName = itemView.findViewById(R.id.nameTV);
         passStart = itemView.findViewById(R.id.startTV);
@@ -49,4 +49,6 @@ public class RideViewHolder extends RecyclerView.ViewHolder {
     public void setOnClickListener(RideViewHolder.ClickListener clickListener){
         mClickListener = clickListener;
     }
+
+
 }

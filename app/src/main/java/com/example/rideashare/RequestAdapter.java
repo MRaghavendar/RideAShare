@@ -9,13 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.List;
 
 public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
-
+    FirebaseFirestore ff;
     Requested lv;
     List<RequestModel> lm;
     Context context;
+
 
     public RequestAdapter(Requested lv, List<RequestModel> lm) {
         this.lv = lv;
@@ -33,6 +40,16 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestViewHolder> {
 
         return viewHolder;
     }
+//    public void deleteItem(int position){
+//
+//        ff.collection("Requested").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                for (DocumentSnapshot details: task.getResult()){
+//                details.
+//                }
+//        })
+//    }
 
     @Override
     public void onBindViewHolder(@NonNull RequestViewHolder viewHolder, int i) {

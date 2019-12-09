@@ -68,7 +68,7 @@ public class WelcomePage extends AppCompatActivity {
         startActivity(logout_intent);
     }
     public void Myrides_function(View v){
-        Intent logout_intent = new Intent(this, Myrides.class);
+        Intent logout_intent = new Intent(this, Profile.class);
         startActivity(logout_intent);
     }
 

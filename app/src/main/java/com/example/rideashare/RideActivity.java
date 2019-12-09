@@ -53,7 +53,7 @@ public class RideActivity extends AppCompatActivity {
 
                 for (DocumentSnapshot details: task.getResult()){
 
-                    RideModel rm = new RideModel(details.getString("id"), details.getString("name"), details.getString("startLoc"), details.getString("endLoc"), details.getString("dates"), details.getString("price"),details.getString("seats"),details.getString("address"));
+                    RideModel rm = new RideModel(details.getString("id"), details.getString("name"), details.getString("startLoc"), details.getString("endLoc"), details.getString("dates"), details.getString("price"),details.getString("seats"),details.getString("number"));
                     lm.add(rm);
 
                 }
