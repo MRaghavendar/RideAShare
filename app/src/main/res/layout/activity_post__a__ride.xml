@@ -123,6 +123,7 @@
         android:id="@+id/postBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#33B5E5"
         android:text="Post"
         android:textSize="18sp" />
 

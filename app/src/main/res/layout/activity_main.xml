@@ -21,9 +21,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:background="#EBC622"
         android:gravity="center"
         android:text="Signin into account"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -64,23 +65,26 @@
         android:id="@+id/log_inBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#0FBE41"
         android:text="Log in"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/signupBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
         android:onClick="Signup_fun"
         android:text="SignUp"
-        android:textSize="18sp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/forgotpass_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#009E9898"
         android:onClick="Forgot_function"
-        android:text="Forgot Password"
-        android:textSize="18sp" />
+        android:text="Forgot Password?"
+        android:textSize="20sp" />
 
 </LinearLayout>

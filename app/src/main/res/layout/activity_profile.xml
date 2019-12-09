@@ -71,5 +71,6 @@
         android:id="@+id/save_profileBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#33B5E5"
         android:text="Update" />
 </LinearLayout>
