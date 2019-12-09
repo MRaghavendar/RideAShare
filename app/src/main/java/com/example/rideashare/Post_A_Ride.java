@@ -14,8 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -24,9 +22,10 @@ import java.util.UUID;
 
 public class Post_A_Ride extends AppCompatActivity {
 
-    EditText passName, passStart, passEnd, passDate, passPrice, passSeats, passAddress;
-    Button passSave, passDetails;
+    EditText passName, passStart, passEnd, passDate, passPrice, passSeats, passnumber;
+    Button passSave;
     FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,19 +37,12 @@ public class Post_A_Ride extends AppCompatActivity {
         passDate = findViewById(R.id.dateEdit);
         passPrice = findViewById(R.id.costEdit);
         passSeats = findViewById(R.id.seatsEdit);
-        passAddress = findViewById(R.id.locationET);
+        passnumber = findViewById(R.id.locationET);
         passSave = findViewById(R.id.postBTN);
-//        passDetails = findViewById(R.id.detailsBtn);
+
         db = FirebaseFirestore.getInstance();
 
-//        passDetails.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent in = new Intent(getApplicationContext(), RideActivity.class);
-//                startActivity(in);
-//
-//            }
-//        });
+
         passSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +52,7 @@ public class Post_A_Ride extends AppCompatActivity {
                 String dates = passDate.getText().toString().trim();
                 String price = passPrice.getText().toString().trim();
                 String seats = passSeats.getText().toString().trim();
-                String address = passAddress.getText().toString().trim();
+                String address = passnumber.getText().toString().trim();
 
                 storeData(name, startLoc, endLoc, dates, price, seats, address);
 
@@ -72,8 +64,10 @@ public class Post_A_Ride extends AppCompatActivity {
     }
 
 
-    private void storeData(String name, String startLoc, String endLoc, String dates, String price, String seats, String address) {
+    private void storeData(String name, String startLoc, String endLoc, String dates, String price, String seats, String number) {
         String id = UUID.randomUUID().toString();
+//        String id = fa.getInstance().getCurrentUser().getUid().toString();
+
         Map<String, Object> doc = new HashMap<>();
         doc.put("id",id);
         doc.put("name",name);
@@ -82,7 +76,7 @@ public class Post_A_Ride extends AppCompatActivity {
         doc.put("dates", dates);
         doc.put("price", price);
         doc.put("seats", seats);
-        doc.put("address", address);
+        doc.put("number", number);
 
         db.collection("Details").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -90,6 +84,7 @@ public class Post_A_Ride extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         Toast.makeText(Post_A_Ride.this,"Added..",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Post_A_Ride.this, MainActivity.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

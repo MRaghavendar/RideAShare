@@ -1,5 +1,6 @@
 package com.example.rideashare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Request_A_Ride extends AppCompatActivity {
+public class Request_A_Ride extends AppCompatActivity  {
 
 
     EditText pName, passStart, passEnd, passDate, rphone;
@@ -34,20 +35,12 @@ public class Request_A_Ride extends AppCompatActivity {
         passEnd = findViewById(R.id.destinationET);
         passDate = findViewById(R.id.dateET_req);
         rphone = findViewById(R.id.phoneET_req);
-//        passSeats = findViewById(R.id.seatsEdit);
-//        passAddress = findViewById(R.id.locationET);
+
         Request = findViewById(R.id.searchBTN);
-//        passDetails = findViewById(R.id.detailsBtn);
+
         db = FirebaseFirestore.getInstance();
 
-//        passDetails.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent in = new Intent(getApplicationContext(), RideActivity.class);
-//                startActivity(in);
-//
-//            }
-//        });
+
         Request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,8 +49,6 @@ public class Request_A_Ride extends AppCompatActivity {
                 String endLoc = passEnd.getText().toString().trim();
                 String dates = passDate.getText().toString().trim();
                 String number = rphone.getText().toString().trim();
-//                String seats = passSeats.getText().toString().trim();
-//                String address = passAddress.getText().toString().trim();
 
                 storeData(name, startLoc, endLoc, dates, number);
 
@@ -78,8 +69,7 @@ public class Request_A_Ride extends AppCompatActivity {
         doc.put("Destination", endLoc);
         doc.put("Date", dates);
         doc.put("Number", number);
-//        doc.put("seats", seats);
-//        doc.put("address", address);
+
 
         db.collection("Requested").document(id).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -87,6 +77,7 @@ public class Request_A_Ride extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         Toast.makeText(Request_A_Ride.this,"Added..",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Request_A_Ride.this, MainActivity.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -99,6 +90,7 @@ public class Request_A_Ride extends AppCompatActivity {
                 });
 
     }
+
 
 }
 
