@@ -77,7 +77,7 @@ public class Request_A_Ride extends AppCompatActivity  {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         Toast.makeText(Request_A_Ride.this,"Added..",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Request_A_Ride.this, MainActivity.class));
+                        startActivity(new Intent(Request_A_Ride.this, WelcomePage.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

@@ -67,22 +67,9 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/password_proTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password" />
-
-    <EditText
-        android:id="@+id/password_proET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <Button
         android:id="@+id/save_profileBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="Update" />
 </LinearLayout>
